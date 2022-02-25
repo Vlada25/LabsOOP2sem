@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<workers>
+  <workers fullName="Leonenko Vladislava Urievna" tariffCategory="Spesialist" billingPeriodDate="11.02.2022" amountOfWorkDone="250" unitCost="3,9" />
+  <workers fullName="Dvornik Polyna Dmitrievna" tariffCategory="Manager" billingPeriodDate="17.01.2022" amountOfWorkDone="275" unitCost="4,5" />
+  <workers fullName="Ermolenko Andrew Aleksandrovich" tariffCategory="Spesialist" billingPeriodDate="23.02.2022" amountOfWorkDone="300" unitCost="7,2" />
+</workers>
