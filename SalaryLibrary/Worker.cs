@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalaryLibrary
 {
@@ -15,6 +11,7 @@ namespace SalaryLibrary
         public double UnitCost { get; set; }
         public string DateToStr { get; private set; }
 
+        public Worker() { }
         public Worker(
             string fullName, 
             TariffCategory tariffCategory, 
