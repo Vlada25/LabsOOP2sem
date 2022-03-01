@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -10,6 +7,12 @@ namespace SalaryLibrary
 {
     internal class XmlParser
     {
+        /// <summary>
+        /// Validation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="v"></param>
+        /// <exception cref="Exception"></exception>
         static void ValidationEventHandler(object sender, ValidationEventArgs v)
         {
             if (v.Severity == XmlSeverityType.Warning)
@@ -18,6 +21,11 @@ namespace SalaryLibrary
                 throw new Exception("Error: " + v.Message);
         }
 
+        /// <summary>
+        /// Reading from xml file
+        /// </summary>
+        /// <param name="filename">Name of file</param>
+        /// <returns>List of workers</returns>
         public static List<Worker> Read(string filename)
         {
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -53,6 +61,10 @@ namespace SalaryLibrary
             return workerList;
         }
 
+        /// <summary>
+        /// Saving info into file
+        /// </summary>
+        /// <param name="filename">Name of file</param>
         public static void Save(string filename)
         {
             XmlDocument xDoc = new XmlDocument();

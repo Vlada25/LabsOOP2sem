@@ -24,10 +24,10 @@ namespace SalaryTest
         public void ParseDateToStr_Test()
         {
             Worker worker = new Worker(
-                "Fedorovich Anastasiya Dmitrievna", 
-                TariffCategory.Other, 
-                new DateTime(2022, 3, 14), 
-                205, 
+                "Fedorovich Anastasiya Dmitrievna",
+                TariffCategory.Other,
+                new DateTime(2022, 3, 14),
+                205,
                 21.3);
 
             worker.ParseDateToStr();

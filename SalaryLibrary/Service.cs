@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml;
 
 namespace SalaryLibrary
 {
@@ -8,16 +7,28 @@ namespace SalaryLibrary
     {
         public static List<Worker> Workers { get; private set; }
 
+        /// <summary>
+        /// Reading from xml file
+        /// </summary>
+        /// <param name="filename">Name and place of file</param>
         public static void ReadXML(string filename)
         {
             Workers = XmlParser.Read(filename);
-            
         }
 
+        /// <summary>
+        /// Saving info into xml file
+        /// </summary>
+        /// <param name="filename">Name and place of file</param>
         public static void SaveToXml(string filename)
         {
             XmlParser.Save(filename);
         }
+
+        /// <summary>
+        /// Getting full names of workers in list
+        /// </summary>
+        /// <returns>Array of full names</returns>
         public static string[] GetWorkersNames()
         {
             string[] names = new string[Workers.Count];
@@ -30,6 +41,10 @@ namespace SalaryLibrary
             return names;
         }
 
+        /// <summary>
+        /// Getting workers attributes
+        /// </summary>
+        /// <returns>Array of attributes</returns>
         public static string[] GetWorkersAttributes()
         {
             return new string[]
@@ -38,6 +53,12 @@ namespace SalaryLibrary
             };
         }
 
+        /// <summary>
+        /// Changing some attribute of some worker
+        /// </summary>
+        /// <param name="fullName"></param>
+        /// <param name="attribute"></param>
+        /// <param name="newValue"></param>
         public static void ChangeSomeValue(string fullName, string attribute, string newValue)
         {
             int index = 0;
@@ -72,6 +93,12 @@ namespace SalaryLibrary
             }
         }
 
+        /// <summary>
+        /// Setting tariff category
+        /// </summary>
+        /// <param name="category">String value of tariff category</param>
+        /// <returns>TariffCategory object</returns>
+        /// <exception cref="Exception"></exception>
         internal static TariffCategory SetTariffCategory(string category)
         {
             if (!Enum.TryParse(category, out TariffCategory tariffCategory))

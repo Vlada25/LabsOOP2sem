@@ -28,7 +28,7 @@ namespace SalaryWpfApp
                 string attribute = (string)UnitSelector.SelectedItem;
                 string newValue = NewValueField.Text;
 
-                if (string.IsNullOrEmpty(worker) || string.IsNullOrEmpty(attribute) || string.IsNullOrEmpty(newValue)) 
+                if (string.IsNullOrEmpty(worker) || string.IsNullOrEmpty(attribute) || string.IsNullOrEmpty(newValue))
                 {
                     throw new Exception("You have to fill in all fields");
                 }
