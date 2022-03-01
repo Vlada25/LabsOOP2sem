@@ -10,72 +10,13 @@ namespace SalaryLibrary
 
         public static void ReadXML(string filename)
         {
-            Workers = new List<Worker>();
-            XmlReader xmlReader = XmlReader.Create(filename);
-
-            while (xmlReader.Read())
-            {
-                if (xmlReader.NodeType == XmlNodeType.Element)
-                {
-                    if (xmlReader.HasAttributes)
-                    {
-                        string fullName = xmlReader.GetAttribute("fullName");
-                        TariffCategory tariffCategory = SetTariffCategory(xmlReader.GetAttribute("tariffCategory"));
-                        DateTime billingPeriodDate = Convert.ToDateTime(xmlReader.GetAttribute("billingPeriodDate"));
-                        int amountOfWorkDone = Convert.ToInt32(xmlReader.GetAttribute("amountOfWorkDone"));
-                        double unitCost = Convert.ToDouble(xmlReader.GetAttribute("unitCost"));
-
-                        Workers.Add(new Worker(
-                            fullName, 
-                            tariffCategory, 
-                            billingPeriodDate, 
-                            amountOfWorkDone, 
-                            unitCost));
-                    }
-                }
-            }
+            Workers = XmlParser.Read(filename);
+            
         }
 
         public static void SaveToXml(string filename)
         {
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(filename);
-
-            XmlElement xRoot = xDoc.DocumentElement;
-            xRoot.RemoveAll();
-
-            foreach (Worker worker in Workers)
-            {
-                XmlElement workerElem = xDoc.CreateElement("workers");
-
-                XmlAttribute fullNameAttr = xDoc.CreateAttribute("fullName");
-                XmlAttribute tariffCategoryAttr = xDoc.CreateAttribute("tariffCategory");
-                XmlAttribute billingPeriodDateAttr = xDoc.CreateAttribute("billingPeriodDate");
-                XmlAttribute amountOfWorkDoneAttr = xDoc.CreateAttribute("amountOfWorkDone");
-                XmlAttribute unitCostAttr = xDoc.CreateAttribute("unitCost");
-
-                XmlText fullNameText = xDoc.CreateTextNode(worker.FullName);
-                XmlText tariffCategoryText = xDoc.CreateTextNode(worker.TariffCategory.ToString());
-                XmlText billingPeriodDateText = xDoc.CreateTextNode(worker.DateToStr);
-                XmlText amountOfWorkDoneText = xDoc.CreateTextNode(worker.AmountOfWorkDone.ToString());
-                XmlText unitCostText = xDoc.CreateTextNode(worker.UnitCost.ToString());
-
-                fullNameAttr.AppendChild(fullNameText);
-                tariffCategoryAttr.AppendChild(tariffCategoryText);
-                billingPeriodDateAttr.AppendChild(billingPeriodDateText);
-                amountOfWorkDoneAttr.AppendChild(amountOfWorkDoneText);
-                unitCostAttr.AppendChild(unitCostText);
-
-                workerElem.Attributes.Append(fullNameAttr);
-                workerElem.Attributes.Append(tariffCategoryAttr);
-                workerElem.Attributes.Append(billingPeriodDateAttr);
-                workerElem.Attributes.Append(amountOfWorkDoneAttr);
-                workerElem.Attributes.Append(unitCostAttr);
-
-                xRoot.AppendChild(workerElem);
-            }
-
-            xDoc.Save(filename);
+            XmlParser.Save(filename);
         }
         public static string[] GetWorkersNames()
         {
@@ -131,7 +72,7 @@ namespace SalaryLibrary
             }
         }
 
-        private static TariffCategory SetTariffCategory(string category)
+        internal static TariffCategory SetTariffCategory(string category)
         {
             if (!Enum.TryParse(category, out TariffCategory tariffCategory))
             {
