@@ -11,16 +11,17 @@
             <Setter Property="Margin" Value="20 5 20 5" />
             <Setter Property="Width" Value="100" />
             <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="#DAFDFF"></Setter>
         </Style>
     </Window.Resources>
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot" Background="#B3FBFF">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" x:Name="WorkerGrid">
+        <DataGrid AutoGenerateColumns="False" x:Name="WorkerGrid" Background="#DAFDFF">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="200"/>
+                <DataGridTextColumn Binding="{Binding FullName}" Header="Full Name" Width="200" />
                 <DataGridTextColumn Binding="{Binding TariffCategory}" Header="Tariff Category" Width="120"/>
                 <DataGridTextColumn Binding="{Binding DateToStr}" Header="Billing Period Date" Width="110"/>
                 <DataGridTextColumn Binding="{Binding AmountOfWorkDone}" Header="Amount Of Work Done" Width="100"/>
