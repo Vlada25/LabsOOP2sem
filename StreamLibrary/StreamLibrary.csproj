@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMyStream.cs" />
     <Compile Include="MyBufferStream.cs" />
     <Compile Include="MyFileStream.cs" />
     <Compile Include="MyMemoryStream.cs" />
+    <Compile Include="MyStream.cs" />
+    <Compile Include="MyStreamDecorator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

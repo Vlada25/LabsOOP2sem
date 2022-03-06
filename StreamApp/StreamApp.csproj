@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\File1.txt" />
+    <Content Include="bin\File2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StreamLibrary\StreamLibrary.csproj">
+      <Project>{B559E086-8E69-4679-ADA7-7A173F0B3BC1}</Project>
+      <Name>StreamLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
