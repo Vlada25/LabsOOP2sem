@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StreamLibrary
+﻿namespace StreamLibrary
 {
     public interface IMyStream
     {
+        /// <summary>
+        /// Reading from file
+        /// </summary>
         void Read();
-        void Write();
+
+        /// <summary>
+        /// Writing to file
+        /// </summary>
+        /// <param name="data">Text to write</param>
+        void Write(string data);
     }
 }
