@@ -21,6 +21,8 @@ namespace StreamLibrary
                 {
                     Text += temp.GetString(b);
                 }
+
+                Text = Text.Substring(1);
             }
         }
 

@@ -6,7 +6,7 @@ namespace StreamApp
 {
     public partial class MainForm : Form
     {
-        private string[] filenames = { @"..\File1.txt", @"..\File2.txt" };
+        private string[] filenames = { @"..\File1.txt", @"..\File2.txt", @"..\File3.txt" };
         private string[] streams = { "FileStream", "BufferStream", "MemoryStream" };
         public MainForm()
         {
@@ -43,7 +43,8 @@ namespace StreamApp
                         break;
                 }
 
-                MessageBox.Show(myStream.Text, $"Text from {(string)comboBoxFiles.SelectedItem} read with {(string)comboBoxStreams.SelectedItem}");
+                MessageBox.Show(myStream.Text, $"Text from {(string)comboBoxFiles.SelectedItem} " +
+                    $"read with {(string)comboBoxStreams.SelectedItem}");
             }
             catch (Exception ex)
             {

@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="bin\File1.txt" />
     <Content Include="bin\File2.txt" />
+    <Content Include="bin\File3.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StreamLibrary\StreamLibrary.csproj">
