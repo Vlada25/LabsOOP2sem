@@ -10,6 +10,6 @@ namespace TextEditorLibrary
     {
         public static List<TextFile> files { get; } = new List<TextFile>();
 
-        public static void AddTextFile()
+        public static void AddTextFile() { }
     }
 }
