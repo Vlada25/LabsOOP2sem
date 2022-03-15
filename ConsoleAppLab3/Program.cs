@@ -47,7 +47,6 @@ foreach (MemberInfo field in myType.GetFields(BindingFlags.DeclaredOnly | Bindin
 }
 
 // Serialization
-
 try
 {
 	XmlSerializer xmlSerializer = new XmlSerializer(typeof(Person));
@@ -64,3 +63,18 @@ catch (Exception ex)
 	Console.WriteLine(ex.Message);
 }
 
+// Desirealization
+try
+{
+	XmlSerializer xmlSerializer = new XmlSerializer(typeof(Person));
+
+	using (FileStream fs = new FileStream(@"E:\Лабы\2курс\ООП\LabsOOP2sem\ConsoleAppLab3\person.xml", FileMode.OpenOrCreate))
+	{
+		Person? person1 = xmlSerializer.Deserialize(fs) as Person;
+		Console.WriteLine($"\nObject has been deserialized\nName: {person1?.Name}");
+	}
+}
+catch (Exception ex)
+{
+	Console.WriteLine(ex.Message);
+}
