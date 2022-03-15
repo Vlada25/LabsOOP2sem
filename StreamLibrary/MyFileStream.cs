@@ -22,7 +22,7 @@ namespace StreamLibrary
                     Text += temp.GetString(b);
                 }
 
-                Text = Text.Substring(1);
+                //Text = Text.Substring(1);
             }
         }
 
