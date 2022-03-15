@@ -35,7 +35,7 @@ namespace StreamLibrary
             UTF8Encoding encoding = new UTF8Encoding();
             int dataByteLength = encoding.GetByteCount(data);
 
-            using (FileStream fs = File.OpenWrite(Filename))
+            using (FileStream fs = new FileStream(Filename, FileMode.Create))
             {
                 fs.Write(encoding.GetBytes(data), 0, dataByteLength);
                 fs.Flush();
