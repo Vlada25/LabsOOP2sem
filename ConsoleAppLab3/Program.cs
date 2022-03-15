@@ -1,5 +1,6 @@
 ﻿using PersonLibrary;
 using System.Reflection;
+using System.Xml.Serialization;
 
 Type myType = typeof(Person);
 
@@ -44,6 +45,22 @@ foreach (MemberInfo field in myType.GetFields(BindingFlags.DeclaredOnly | Bindin
 {
 	Console.WriteLine($" - {field}");
 }
-	
 
+// Serialization
+
+try
+{
+	XmlSerializer xmlSerializer = new XmlSerializer(typeof(Person));
+
+	using (FileStream fs = new FileStream(@"E:\Лабы\2курс\ООП\LabsOOP2sem\ConsoleAppLab3\person.xml", FileMode.OpenOrCreate))
+	{
+		xmlSerializer.Serialize(fs, person);
+
+		Console.WriteLine("\nObject has been serialized");
+	}
+}
+catch (Exception ex)
+{
+	Console.WriteLine(ex.Message);
+}
 

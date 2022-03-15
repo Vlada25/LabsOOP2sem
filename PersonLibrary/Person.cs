@@ -1,11 +1,13 @@
 ﻿namespace PersonLibrary
 {
+    [Serializable]
     public class Person
     {
         public string Name;
         private int _age;
         private string _nickname;
 
+        public Person() { }
         public Person(string name, int age, string nickname)
         {
             Name = name;
