@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TextEditorLibrary;
 
 namespace TextEditorApp
 {
@@ -18,7 +19,7 @@ namespace TextEditorApp
         private ComboBox _filesComboBox = new ComboBox();
 
         private Button _openBtn = new Button(),
-            _addBtn = new Button(),
+            _createBtn = new Button(),
             _deleteBtn = new Button();
 
         public MainForm()
@@ -43,6 +44,7 @@ namespace TextEditorApp
             _filesComboBox.Name = "FileComboBox";
             _filesComboBox.Location = new Point(30, 100);
             _filesComboBox.Width = 150;
+            _filesComboBox.Items.AddRange(FileManager.Filepaths.ToArray());
             Controls.Add(_filesComboBox);
 
             _openBtn.Name = "openFileButton";
@@ -51,23 +53,50 @@ namespace TextEditorApp
             _openBtn.Width = 90;
             _openBtn.Height = 35;
             _openBtn.Font = new Font(Font.FontFamily, 11);
+            _openBtn.Click += OpenButton_Click;
             Controls.Add(_openBtn);
 
-            _addBtn.Name = "addFileButton";
-            _addBtn.Text = "Add";
-            _addBtn.Location = new Point(130, 150);
-            _addBtn.Width = 90;
-            _addBtn.Height = 35;
-            _addBtn.Font = new Font(Font.FontFamily, 11);
-            Controls.Add(_addBtn);
+            _createBtn.Name = "createFileButton";
+            _createBtn.Text = "Create";
+            _createBtn.Location = new Point(130, 150);
+            _createBtn.Width = 90;
+            _createBtn.Height = 35;
+            _createBtn.Font = new Font(Font.FontFamily, 11);
+            _createBtn.Click += CreateButton_Click;
+            Controls.Add(_createBtn);
+        }
 
-            _deleteBtn.Name = "deleteFileButton";
-            _deleteBtn.Text = "Delete";
-            _deleteBtn.Location = new Point(230, 150);
-            _deleteBtn.Width = 90;
-            _deleteBtn.Height = 35;
-            _deleteBtn.Font = new Font(Font.FontFamily, 11);
-            Controls.Add(_deleteBtn);
+        public void OpenButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_filesComboBox.SelectedItem is null)
+                {
+                    throw new Exception("You must choose file");
+                }
+
+                string filepath = (string)_filesComboBox.SelectedItem;
+
+                OpenFileForm openFileForm = new OpenFileForm(filepath);
+                openFileForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
+        }
+
+        public void CreateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreateFileForm createFileForm = new CreateFileForm();
+                createFileForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
         }
     }
 }

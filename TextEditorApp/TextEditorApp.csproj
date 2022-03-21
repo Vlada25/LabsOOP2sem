@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFileForm.Designer.cs">
+      <DependentUpon>CreateFileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenFileForm.Designer.cs">
+      <DependentUpon>OpenFileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +90,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\File1.txt" />
+    <Content Include="bin\File2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextEditorLibrary\TextEditorLibrary.csproj">
+      <Project>{1C9F7AAA-F656-483C-963C-C24D793CA081}</Project>
+      <Name>TextEditorLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
