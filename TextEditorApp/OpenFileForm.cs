@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TextEditorLibrary;
 
@@ -34,6 +28,7 @@ namespace TextEditorApp
             _textBox.Height = 200;
             _textBox.ScrollBars = ScrollBars.Vertical;
             _textBox.Font = new Font(Font.FontFamily, 10);
+            _textBox.KeyDown += TextBox_KeyDown;
             Controls.Add(_textBox);
 
             _saveBtn.Name = "saveFileButton";
@@ -59,6 +54,14 @@ namespace TextEditorApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!");
+            }
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.T && e.Modifiers == Keys.Control)
+            {
+                _textBox.SelectionStart += 4;
             }
         }
     }
