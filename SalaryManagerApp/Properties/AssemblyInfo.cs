@@ -1,25 +1,26 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанные со сборкой.
-[assembly: AssemblyTitle("SalaryManager.DAL")]
+// связанных со сборкой.
+[assembly: AssemblyTitle("SalaryManagerApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SalaryManager.DAL")]
+[assembly: AssemblyProduct("SalaryManagerApp")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
-// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
+// COM, следует установить атрибут ComVisible в TRUE для этого типа.
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("42f28eb5-5267-4f1b-9913-7a601d3c391e")]
+[assembly: Guid("dc4f6920-d5d4-47f6-bc61-b99baf3b8e88")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
