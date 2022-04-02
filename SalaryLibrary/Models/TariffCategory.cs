@@ -1,4 +1,4 @@
-﻿namespace SalaryLibrary
+﻿namespace SalaryLibrary.Models
 {
     public enum TariffCategory
     {
