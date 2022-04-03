@@ -4,15 +4,22 @@ namespace SalaryManager.DAL.Models
 {
     public class Worker
     {
+        public int Id { get; set; }
         public string FullName { get; set; }
+
+        public int WorkerCategoryId { get; set; }
         public WorkerCategory TariffCategory { get; set; }
+
         public DateTime BillingPeriodDate { get; set; }
         public int AmountOfWorkDone { get; set; }
+
+        public int ProductionUnitId { get; set; }
         public ProductionUnit ProductionUnit { get; set; }
 
         public Worker() { }
 
         public Worker(
+            int id,
             string fullName,
             WorkerCategory tariffCategory,
             DateTime billingPeriodDate,
@@ -20,6 +27,7 @@ namespace SalaryManager.DAL.Models
             ProductionUnit productionUnit
             )
         {
+            Id = id;
             FullName = fullName;
             TariffCategory = tariffCategory;
             BillingPeriodDate = billingPeriodDate;

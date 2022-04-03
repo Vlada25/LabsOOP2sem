@@ -1,0 +1,8 @@
+﻿using System;
+
+namespace SalaryManager.ORM.Interfaces
+{
+    public interface ITableManager
+    {
+    }
+}

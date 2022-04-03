@@ -8,12 +8,14 @@ namespace SalaryManager.DAL.Models
 {
     public class ProductionUnit
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string UnitName { get; set; }
         public decimal Price { get; set; }
 
-        public ProductionUnit(string name, decimal price)
+        public ProductionUnit(int id, string name, decimal price)
         {
-            Name = name;
+            Id = id;
+            UnitName = name;
             Price = price;
         }
 

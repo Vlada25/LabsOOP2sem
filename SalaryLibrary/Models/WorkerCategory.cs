@@ -8,12 +8,14 @@ namespace SalaryManager.DAL.Models
 {
     public class WorkerCategory
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string CategoryName { get; set; }
         public double TariffCoefficient { get; set; } // процент к зарплате в зависимости от категории
 
-        public WorkerCategory(string name, double tariffCoefficient)
+        public WorkerCategory(int id, string name, double tariffCoefficient)
         {
-            Name = name;
+            Id = id;
+            CategoryName = name;
             TariffCoefficient = tariffCoefficient;
         }
 
