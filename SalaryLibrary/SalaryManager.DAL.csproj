@@ -50,7 +50,7 @@
     <Compile Include="Repositories\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Repositories\Interfaces\IWorkerCtegoryRepository.cs" />
     <Compile Include="Repositories\Interfaces\IWorkerRepository.cs" />
-    <Compile Include="Repositories\LocalRepositories\LProductionRepository.cs" />
+    <Compile Include="Repositories\LocalRepositories\LProductionUnitRepository.cs" />
     <Compile Include="Repositories\LocalRepositories\LWorkerCategoryRepository.cs" />
     <Compile Include="Repositories\LocalRepositories\LWorkerRepository.cs" />
     <Compile Include="Repositories\ProductionUnitRepository.cs" />

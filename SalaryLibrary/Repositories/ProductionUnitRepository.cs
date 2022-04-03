@@ -1,10 +1,8 @@
-﻿using SalaryManager.DAL.Models;
+﻿using SalaryLibrary;
+using SalaryManager.DAL.Models;
 using SalaryManager.DAL.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalaryManager.DAL.Repositories
 {
@@ -12,7 +10,10 @@ namespace SalaryManager.DAL.Repositories
     {
         public void Create(ProductionUnit entity)
         {
-            throw new NotImplementedException();
+            string query = "INSERT ProductionUnits (UnitName, Price)" +
+                $"VALUES ('{entity.Name}', {entity.Price});";
+
+            Service.ORM.InsertValue("ProductionUnits", query);
         }
 
         public void Delete(ProductionUnit entity)

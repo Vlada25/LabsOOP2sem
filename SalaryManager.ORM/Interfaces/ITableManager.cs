@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SalaryManager.ORM.Interfaces
+﻿namespace SalaryManager.ORM.Interfaces
 {
     public interface ITableManager
     {

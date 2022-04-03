@@ -1,12 +1,5 @@
 ﻿using SalaryLibrary;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalaryManagerApp
@@ -38,7 +31,7 @@ namespace SalaryManagerApp
                 dataTable.Columns.Add(dataColumn);
             }
 
-            foreach (DataRow row in dataSet.Tables[0].Rows) 
+            foreach (DataRow row in dataSet.Tables[0].Rows)
                 dataTable.Rows.Add(row.ItemArray);
         }
     }

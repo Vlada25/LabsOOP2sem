@@ -21,17 +21,21 @@ namespace SalaryManager.DAL.Models
         public Worker(
             int id,
             string fullName,
+            int workerCategoryId,
             WorkerCategory tariffCategory,
             DateTime billingPeriodDate,
             int amountOfWorkDone,
+            int productionUnitId,
             ProductionUnit productionUnit
             )
         {
             Id = id;
             FullName = fullName;
+            WorkerCategoryId = workerCategoryId;
             TariffCategory = tariffCategory;
             BillingPeriodDate = billingPeriodDate;
             AmountOfWorkDone = amountOfWorkDone;
+            ProductionUnitId = productionUnitId;
             ProductionUnit = productionUnit;
         }
 

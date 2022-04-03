@@ -1,10 +1,6 @@
 ﻿using SalaryManager.ORM.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalaryManager.ORM
 {
@@ -28,9 +24,14 @@ namespace SalaryManager.ORM
             throw new NotImplementedException();
         }
 
-        public void InsertValue(Type type, int id, string sqlComPart)
+        public void InsertValue(string tableName, string sqlCom)
         {
-            throw new NotImplementedException();
+            if (!_tableManager.IsTableExists(tableName))
+            {
+                throw new Exception($"Table {tableName} is not exist");
+            }
+
+            _sqlExecutor.ExecuteNonQuery(sqlCom);
         }
 
         public void UpdateValue(Type type, int id, string sqlComPart)
