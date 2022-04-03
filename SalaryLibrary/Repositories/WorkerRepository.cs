@@ -10,9 +10,9 @@ namespace SalaryManager.DAL.Repositories
     {
         public void Create(Worker entity)
         {
-            string query = "INSERT Workers (FullName, WorkerCategoryId, BillingPeriodDate, AmountOfWorkDone, ProductionUnitId)" +
-                $"VALUES ('{entity.FullName}', {entity.WorkerCategoryId}, {entity.BillingPeriodDate}, {entity.AmountOfWorkDone}, " +
-                $"{entity.ProductionUnitId});";
+            string query = "INSERT Workers (Id, FullName, WorkerCategoryId, BillingPeriodDate, AmountOfWorkDone, ProductionUnitId)" +
+                $"VALUES ({entity.Id}, '{entity.FullName}', {entity.WorkerCategoryId}, '{entity.GetStrDate()}', " +
+                $"{entity.AmountOfWorkDone}, {entity.ProductionUnitId});";
 
             Service.ORM.InsertValue("Workers", query);
         }

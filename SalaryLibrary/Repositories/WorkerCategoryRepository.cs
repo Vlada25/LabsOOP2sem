@@ -10,8 +10,8 @@ namespace SalaryManager.DAL.Repositories
     {
         public void Create(WorkerCategory entity)
         {
-            string query = "INSERT WorkerCategories (CategoryName, TariffCoefficient)" +
-                $"VALUES ('{entity.Name}', {entity.TariffCoefficient});";
+            string query = "INSERT WorkerCategories (Id, CategoryName, TariffCoefficient)" +
+                $"VALUES ({entity.Id}, '{entity.CategoryName}', {entity.TariffCoefficient.ToString().Replace(',', '.')});";
 
             Service.ORM.InsertValue("WorkerCategories", query);
         }

@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEntityForm.Designer.cs">
+      <DependentUpon>CreateEntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteEntityForm.Designer.cs">
+      <DependentUpon>DeleteEntityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +73,18 @@
     <Compile Include="TableForm.Designer.cs">
       <DependentUpon>TableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntityForm.Designer.cs">
+      <DependentUpon>UpdateEntityForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateEntityForm.resx">
+      <DependentUpon>CreateEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteEntityForm.resx">
+      <DependentUpon>DeleteEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="TableForm.resx">
       <DependentUpon>TableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntityForm.resx">
+      <DependentUpon>UpdateEntityForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

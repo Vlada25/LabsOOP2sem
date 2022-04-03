@@ -10,8 +10,8 @@ namespace SalaryManager.DAL.Repositories
     {
         public void Create(ProductionUnit entity)
         {
-            string query = "INSERT ProductionUnits (UnitName, Price)" +
-                $"VALUES ('{entity.Name}', {entity.Price});";
+            string query = "INSERT ProductionUnits (Id, UnitName, Price)" +
+                $"VALUES ({entity.Id}, '{entity.UnitName}', {entity.Price.ToString().Replace(',', '.')});";
 
             Service.ORM.InsertValue("ProductionUnits", query);
         }

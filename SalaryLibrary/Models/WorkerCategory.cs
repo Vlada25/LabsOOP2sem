@@ -3,13 +3,13 @@
     public class WorkerCategory
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string CategoryName { get; set; }
         public double TariffCoefficient { get; set; } // процент к зарплате в зависимости от категории
 
         public WorkerCategory(int id, string name, double tariffCoefficient)
         {
             Id = id;
-            Name = name;
+            CategoryName = name;
             TariffCoefficient = tariffCoefficient;
         }
 

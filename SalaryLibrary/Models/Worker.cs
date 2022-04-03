@@ -39,6 +39,23 @@ namespace SalaryManager.DAL.Models
             ProductionUnit = productionUnit;
         }
 
+        public Worker(
+            int id,
+            string fullName,
+            int workerCategoryId,
+            DateTime billingPeriodDate,
+            int amountOfWorkDone,
+            int productionUnitId
+            )
+        {
+            Id = id;
+            FullName = fullName;
+            WorkerCategoryId = workerCategoryId;
+            BillingPeriodDate = billingPeriodDate;
+            AmountOfWorkDone = amountOfWorkDone;
+            ProductionUnitId = productionUnitId;
+        }
+
         /// <summary>
         /// Parsing BillingPeriodDate from DateTime to string
         /// </summary>

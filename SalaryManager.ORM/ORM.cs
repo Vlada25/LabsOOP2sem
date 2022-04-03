@@ -14,9 +14,15 @@ namespace SalaryManager.ORM
             _sqlExecutor = new MySqlExecutor(connectionString);
         }
 
-        public bool DeleteValue(Type type, int id)
+        public void DeleteValue(string tableName, int id)
         {
-            throw new NotImplementedException();
+            if (!_tableManager.IsTableExists(tableName))
+            {
+                throw new Exception($"Table {tableName} is not exist");
+            }
+
+            string query = $"DELETE FROM {tableName} WHERE Id = {id}";
+            _sqlExecutor.ExecuteNonQuery(query);
         }
 
         public DataRow GetValue(Type type, int id)
