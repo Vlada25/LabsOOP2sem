@@ -33,7 +33,9 @@ namespace SalaryManager.DAL.Repositories
 
         public void Update(ProductionUnit entity)
         {
-            throw new NotImplementedException();
+            string query = $"UnitName = '{entity.UnitName}', Price = {entity.Price.ToString().Replace(',', '.')}";
+
+            Service.ORM.UpdateValue("ProductionUnits", entity.Id, query);
         }
     }
 }

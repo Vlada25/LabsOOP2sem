@@ -72,6 +72,32 @@ namespace SalaryLibrary
             }
         }
 
+        public static void UpdateEntity(Type type, List<string> propsValues)
+        {
+            switch (type.Name)
+            {
+                case "ProductionUnit":
+                    ProductionUnit unit = new ProductionUnit(
+                        Convert.ToInt32(propsValues[0]), propsValues[1],
+                        Convert.ToDecimal(propsValues[2]));
+                    _repositories.ProductionUnit.Update(unit);
+                    break;
+                case "WorkerCategory":
+                    WorkerCategory category = new WorkerCategory(
+                        Convert.ToInt32(propsValues[0]), propsValues[1],
+                        Convert.ToDouble(propsValues[2]));
+                    _repositories.WorkerCategory.Update(category);
+                    break;
+                case "Worker":
+                    Worker worker = new Worker(
+                        Convert.ToInt32(propsValues[0]), propsValues[1],
+                        Convert.ToInt32(propsValues[2]), Convert.ToDateTime(propsValues[3]),
+                        Convert.ToInt32(propsValues[4]), Convert.ToInt32(propsValues[5]));
+                    _repositories.Worker.Update(worker);
+                    break;
+            }
+        }
+
         private static string GetStrTable(DataSet dataSet)
         {
             string result = "";

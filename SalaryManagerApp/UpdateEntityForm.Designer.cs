@@ -32,6 +32,7 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.GetEntityBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tableNameLable
@@ -73,11 +74,24 @@
             this.GetEntityBtn.UseVisualStyleBackColor = true;
             this.GetEntityBtn.Click += new System.EventHandler(this.GetEntityBtn_Click);
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SaveBtn.Location = new System.Drawing.Point(212, 311);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(172, 46);
+            this.SaveBtn.TabIndex = 6;
+            this.SaveBtn.Text = "Save Changes";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Visible = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // UpdateEntityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 450);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.GetEntityBtn);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.idLabel);
@@ -95,5 +109,6 @@
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Button GetEntityBtn;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }

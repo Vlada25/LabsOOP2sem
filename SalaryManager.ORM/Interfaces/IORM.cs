@@ -7,7 +7,7 @@ namespace SalaryManager.ORM.Interfaces
     {
         void InsertValue(string tableName, string sqlComPart);
         DataRow GetValue(string tableName, Type type, int id);
-        void UpdateValue(Type type, int id, string sqlComPart);
+        void UpdateValue(string tableName, int id, string sqlComPart);
         void DeleteValue(string tableName, int id);
     }
 }

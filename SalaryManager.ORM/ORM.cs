@@ -32,7 +32,7 @@ namespace SalaryManager.ORM
                 throw new Exception("Table is not exists");
             }
 
-            DataSet dataSet = _sqlExecutor.GetDataSet(tableName);
+            DataSet dataSet = _sqlExecutor.GetDataSet($"SELECT * FROM {tableName}");
 
             foreach (DataTable table in dataSet.Tables)
             {
@@ -58,9 +58,9 @@ namespace SalaryManager.ORM
             _sqlExecutor.ExecuteNonQuery(sqlCom);
         }
 
-        public void UpdateValue(Type type, int id, string sqlComPart)
+        public void UpdateValue(string tableName, int id, string sqlComPart)
         {
-            throw new NotImplementedException();
+            _sqlExecutor.ExecuteScalar($"UPDATE {tableName} SET {sqlComPart} WHERE Id = {id};");
         }
     }
 }

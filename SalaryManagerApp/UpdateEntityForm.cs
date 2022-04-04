@@ -40,6 +40,7 @@ namespace SalaryManagerApp
             foreach (var prop in Service.TableManager.GetBaseProps(_entityType, false))
             {
                 Label label = new Label();
+                label.Width = 170;
                 label.Text = prop.Name;
                 label.Name = prop.Name + "Label";
                 label.Font = new Font(Font.FontFamily, 10);
@@ -61,6 +62,14 @@ namespace SalaryManagerApp
                 yTextBoxLoc += 30;
                 index++;
             }
+
+            SaveBtn.Location = new Point(160, yLabelLoc + 30);
+            SaveBtn.Visible = true;
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
