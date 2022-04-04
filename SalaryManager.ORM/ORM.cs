@@ -25,9 +25,27 @@ namespace SalaryManager.ORM
             _sqlExecutor.ExecuteNonQuery(query);
         }
 
-        public DataRow GetValue(Type type, int id)
+        public DataRow GetValue(string tableName, Type type, int id)
         {
-            throw new NotImplementedException();
+            if (!_tableManager.IsTableExists(tableName))
+            {
+                throw new Exception("Table is not exists");
+            }
+
+            DataSet dataSet = _sqlExecutor.GetDataSet(tableName);
+
+            foreach (DataTable table in dataSet.Tables)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    if ((int)row[0] == id)
+                    {
+                        return row;
+                    }
+                }
+            }
+
+            throw new Exception("Entity is not found");
         }
 
         public void InsertValue(string tableName, string sqlCom)

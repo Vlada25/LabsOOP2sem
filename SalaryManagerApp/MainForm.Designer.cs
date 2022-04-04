@@ -115,12 +115,13 @@
             // UpdateEntityBtn
             // 
             this.UpdateEntityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpdateEntityBtn.Location = new System.Drawing.Point(129, 266);
+            this.UpdateEntityBtn.Location = new System.Drawing.Point(121, 266);
             this.UpdateEntityBtn.Name = "UpdateEntityBtn";
-            this.UpdateEntityBtn.Size = new System.Drawing.Size(130, 43);
+            this.UpdateEntityBtn.Size = new System.Drawing.Size(147, 43);
             this.UpdateEntityBtn.TabIndex = 7;
             this.UpdateEntityBtn.Text = "Update Entity";
             this.UpdateEntityBtn.UseVisualStyleBackColor = true;
+            this.UpdateEntityBtn.Click += new System.EventHandler(this.UpdateEntityBtn_Click);
             // 
             // MainForm
             // 

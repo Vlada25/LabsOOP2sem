@@ -115,5 +115,26 @@ namespace SalaryManagerApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void UpdateEntityBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tablesComboBox.SelectedItem is null)
+                {
+                    throw new Exception("You must choose table!");
+                }
+
+                UpdateEntityForm updateEntityForm = new UpdateEntityForm(
+                    (string)tablesComboBox.SelectedItem,
+                    Service.GetEntityType((string)tablesComboBox.SelectedItem));
+
+                updateEntityForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
