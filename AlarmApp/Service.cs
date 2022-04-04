@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlarmApp
+﻿namespace AlarmApp
 {
     internal static class Service
     {
@@ -12,7 +6,7 @@ namespace AlarmApp
         {
             Alarm alarm = (Alarm)o;
             alarm.DinDinEvent += DisplayMessage;
-            
+
 
             if (DateTime.Now.Hour.Equals(alarm.ResponceTime.Hour) &&
                 DateTime.Now.Minute.Equals(alarm.ResponceTime.Minute) &&

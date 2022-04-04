@@ -1,13 +1,11 @@
 ﻿using AlarmApp;
 
-int menuItem = -1;
-
 try
 {
     int x = 0;
     while (x == 0)
     {
-        Alarm alarm = new Alarm(new DateTime(2022, 4, 4, 15, 6, 0));
+        Alarm alarm = new Alarm(new DateTime(2022, 4, 4, 15, 21, 0));
 
         Console.WriteLine("Будильник установлен на:");
         Console.WriteLine(alarm.ToString());
