@@ -33,7 +33,9 @@ namespace SalaryManager.DAL.Repositories
 
         public void Update(WorkerCategory entity)
         {
-            throw new NotImplementedException();
+            string query = $"CategoryName = '{entity.CategoryName}', TariffCoefficient = {entity.TariffCoefficient.ToString().Replace(',', '.')}";
+
+            Service.ORM.UpdateValue("WorkerCategories", entity.Id, query);
         }
     }
 }

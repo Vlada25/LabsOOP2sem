@@ -34,7 +34,11 @@ namespace SalaryManager.DAL.Repositories
 
         public void Update(Worker entity)
         {
-            throw new NotImplementedException();
+            string query = $"FullName = '{entity.FullName}', WorkerCategoryId = {entity.WorkerCategoryId}, " +
+                $"BillingPeriodDate = {entity.GetStrDate()}, AmountOfWorkDone = {entity.AmountOfWorkDone}, " +
+                $"ProductionUnitId = {entity.ProductionUnitId}";
+
+            Service.ORM.UpdateValue("Workers", entity.Id, query);
         }
     }
 }

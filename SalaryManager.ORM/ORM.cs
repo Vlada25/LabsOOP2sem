@@ -60,7 +60,7 @@ namespace SalaryManager.ORM
 
         public void UpdateValue(string tableName, int id, string sqlComPart)
         {
-            _sqlExecutor.ExecuteScalar($"UPDATE {tableName} SET {sqlComPart} WHERE Id = {id};");
+            _sqlExecutor.ExecuteNonQuery($"UPDATE {tableName} SET {sqlComPart} WHERE Id = {id};");
         }
     }
 }

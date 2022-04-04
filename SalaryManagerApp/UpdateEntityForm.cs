@@ -69,7 +69,14 @@ namespace SalaryManagerApp
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            
+            List<string> props = new List<string>();
+
+            foreach (TextBox textBox in _propsTextBox) props.Add(textBox.Text);
+
+            Service.UpdateEntity(_entityType, props);
+
+            MessageBox.Show("Entity was created");
+            Close();
         }
     }
 }
