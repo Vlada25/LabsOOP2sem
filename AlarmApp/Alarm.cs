@@ -10,30 +10,22 @@ namespace AlarmApp
     {
         public delegate void AlarmHandler(string mes);
         public event AlarmHandler DinDinEvent;
-        public TimeOnly ResponceTime { get; }
-        public int Number { get; set; }
 
-        public Alarm(int number, TimeOnly responceTime)
+        public DateTime ResponceTime { get; }
+
+        public Alarm(DateTime responceTime)
         {
             ResponceTime = responceTime;
-            Number = number;
         }
 
-        public void Ring(TimeOnly currentTime)
+        public void Ring()
         {
-            if (currentTime.Equals(ResponceTime))
-            {
-                DinDinEvent?.Invoke($"Пора вставать! (будильник #{Number} сработал)");
-            }
-            else
-            {
-                DinDinEvent?.Invoke($"Время будильника #{Number} ещё не пришло...");
-            }
+            DinDinEvent?.Invoke($"Пора вставать!");
         }
 
         public override string ToString()
         {
-            return $"#{Number} - {ResponceTime}\n";
+            return $"{ResponceTime}\n";
         }
     }
 }
