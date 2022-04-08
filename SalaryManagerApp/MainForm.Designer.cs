@@ -36,13 +36,14 @@
             this.CreateEntityBtn = new System.Windows.Forms.Button();
             this.DeleteEntityBtn = new System.Windows.Forms.Button();
             this.UpdateEntityBtn = new System.Windows.Forms.Button();
+            this.execQuery1_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tablesComboBox
             // 
             this.tablesComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tablesComboBox.FormattingEnabled = true;
-            this.tablesComboBox.Location = new System.Drawing.Point(82, 75);
+            this.tablesComboBox.Location = new System.Drawing.Point(31, 77);
             this.tablesComboBox.Name = "tablesComboBox";
             this.tablesComboBox.Size = new System.Drawing.Size(228, 28);
             this.tablesComboBox.TabIndex = 0;
@@ -51,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(138, 37);
+            this.label1.Location = new System.Drawing.Point(27, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 22);
             this.label1.TabIndex = 1;
@@ -60,7 +61,7 @@
             // ShowBtn
             // 
             this.ShowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowBtn.Location = new System.Drawing.Point(53, 145);
+            this.ShowBtn.Location = new System.Drawing.Point(31, 131);
             this.ShowBtn.Name = "ShowBtn";
             this.ShowBtn.Size = new System.Drawing.Size(130, 43);
             this.ShowBtn.TabIndex = 2;
@@ -71,7 +72,7 @@
             // ClearTableBtn
             // 
             this.ClearTableBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ClearTableBtn.Location = new System.Drawing.Point(209, 145);
+            this.ClearTableBtn.Location = new System.Drawing.Point(182, 131);
             this.ClearTableBtn.Name = "ClearTableBtn";
             this.ClearTableBtn.Size = new System.Drawing.Size(130, 43);
             this.ClearTableBtn.TabIndex = 3;
@@ -82,9 +83,9 @@
             // StartInitBtn
             // 
             this.StartInitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StartInitBtn.Location = new System.Drawing.Point(53, 324);
+            this.StartInitBtn.Location = new System.Drawing.Point(31, 261);
             this.StartInitBtn.Name = "StartInitBtn";
-            this.StartInitBtn.Size = new System.Drawing.Size(286, 47);
+            this.StartInitBtn.Size = new System.Drawing.Size(281, 47);
             this.StartInitBtn.TabIndex = 4;
             this.StartInitBtn.Text = "Init by Start Values (All tables)";
             this.StartInitBtn.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@
             // CreateEntityBtn
             // 
             this.CreateEntityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateEntityBtn.Location = new System.Drawing.Point(53, 208);
+            this.CreateEntityBtn.Location = new System.Drawing.Point(31, 196);
             this.CreateEntityBtn.Name = "CreateEntityBtn";
             this.CreateEntityBtn.Size = new System.Drawing.Size(130, 43);
             this.CreateEntityBtn.TabIndex = 5;
@@ -104,7 +105,7 @@
             // DeleteEntityBtn
             // 
             this.DeleteEntityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DeleteEntityBtn.Location = new System.Drawing.Point(209, 208);
+            this.DeleteEntityBtn.Location = new System.Drawing.Point(182, 196);
             this.DeleteEntityBtn.Name = "DeleteEntityBtn";
             this.DeleteEntityBtn.Size = new System.Drawing.Size(130, 43);
             this.DeleteEntityBtn.TabIndex = 6;
@@ -115,7 +116,7 @@
             // UpdateEntityBtn
             // 
             this.UpdateEntityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UpdateEntityBtn.Location = new System.Drawing.Point(121, 266);
+            this.UpdateEntityBtn.Location = new System.Drawing.Point(333, 196);
             this.UpdateEntityBtn.Name = "UpdateEntityBtn";
             this.UpdateEntityBtn.Size = new System.Drawing.Size(147, 43);
             this.UpdateEntityBtn.TabIndex = 7;
@@ -123,11 +124,23 @@
             this.UpdateEntityBtn.UseVisualStyleBackColor = true;
             this.UpdateEntityBtn.Click += new System.EventHandler(this.UpdateEntityBtn_Click);
             // 
+            // execQuery1_Btn
+            // 
+            this.execQuery1_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.execQuery1_Btn.Location = new System.Drawing.Point(31, 327);
+            this.execQuery1_Btn.Name = "execQuery1_Btn";
+            this.execQuery1_Btn.Size = new System.Drawing.Size(168, 43);
+            this.execQuery1_Btn.TabIndex = 8;
+            this.execQuery1_Btn.Text = "Execute Query 1";
+            this.execQuery1_Btn.UseVisualStyleBackColor = true;
+            this.execQuery1_Btn.Click += new System.EventHandler(this.execQuery1_Btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 393);
+            this.ClientSize = new System.Drawing.Size(540, 402);
+            this.Controls.Add(this.execQuery1_Btn);
             this.Controls.Add(this.UpdateEntityBtn);
             this.Controls.Add(this.DeleteEntityBtn);
             this.Controls.Add(this.CreateEntityBtn);
@@ -153,6 +166,7 @@
         private System.Windows.Forms.Button CreateEntityBtn;
         private System.Windows.Forms.Button DeleteEntityBtn;
         private System.Windows.Forms.Button UpdateEntityBtn;
+        private System.Windows.Forms.Button execQuery1_Btn;
     }
 }
 

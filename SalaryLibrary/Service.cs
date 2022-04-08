@@ -93,6 +93,20 @@ namespace SalaryLibrary
             }
         }
 
+        public static DataSet GetSpecialDataSet(int queryId)
+        {
+            DataSet dataSet;
+
+            switch (queryId)
+            {
+                case 0:
+                    return TableManager.GetSpecialDataSet("FullName, UnitName, Price",
+                        $"{TablesInDb[1]} JOIN {TablesInDb[0]} ON {TablesInDb[0]}.Id = ProductionUnitId");
+                default:
+                    throw new Exception("Such query not exists");
+            }
+        }
+
         public static Type GetEntityType(string tableName)
         {
             switch (tableName)

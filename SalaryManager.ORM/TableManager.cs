@@ -41,6 +41,11 @@ namespace SalaryManager.ORM
             return _sqlExecutor.GetDataSet($"SELECT * FROM {tableName}");
         }
 
+        public DataSet GetSpecialDataSet(string fields, string afterFrom)
+        {
+            return _sqlExecutor.GetDataSet($"SELECT {fields} FROM {afterFrom}");
+        }
+
         public void ClearTable(string tableName)
         {
             if (!IsTableExists(tableName))

@@ -48,12 +48,12 @@
             this.dataTable.AllowUserToAddRows = false;
             this.dataTable.AllowUserToDeleteRows = false;
             this.dataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataTable.Location = new System.Drawing.Point(12, 59);
+            this.dataTable.Location = new System.Drawing.Point(12, 67);
             this.dataTable.Name = "dataTable";
             this.dataTable.ReadOnly = true;
             this.dataTable.RowHeadersWidth = 51;
             this.dataTable.RowTemplate.Height = 24;
-            this.dataTable.Size = new System.Drawing.Size(776, 379);
+            this.dataTable.Size = new System.Drawing.Size(776, 371);
             this.dataTable.TabIndex = 1;
             // 
             // TableForm

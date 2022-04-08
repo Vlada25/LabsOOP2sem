@@ -136,5 +136,18 @@ namespace SalaryManagerApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void execQuery1_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TableForm tableForm = new TableForm("Workers and productions", "Where price > ", queryId: 0);
+                tableForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
