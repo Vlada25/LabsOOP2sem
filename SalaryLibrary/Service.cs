@@ -24,11 +24,6 @@ namespace SalaryLibrary
 
         private static UnitOfWork _repositories = new UnitOfWork();
 
-        public static string ViewTable(string tableName)
-        {
-            return GetStrTable(TableManager.GetDataSet(tableName));
-        }
-
         public static void CreateTables()
         {
             TableManager.CreateTable(typeof(ProductionUnit), TablesInDb[0]);
@@ -96,35 +91,6 @@ namespace SalaryLibrary
                     _repositories.Worker.Update(worker);
                     break;
             }
-        }
-
-        private static string GetStrTable(DataSet dataSet)
-        {
-            string result = "";
-
-            foreach (DataTable table in dataSet.Tables)
-            {
-                foreach (DataColumn column in table.Columns)
-                {
-                    result += $"{column.ColumnName} --- ";
-                }
-
-                result += "\n";
-
-                foreach (DataRow row in table.Rows)
-                {
-                    var cells = row.ItemArray;
-
-                    foreach (object cell in cells)
-                    {
-                        result += $"{cell} --- ";
-                    }
-
-                    result += "\n";
-                }
-            }
-
-            return result;
         }
 
         public static Type GetEntityType(string tableName)

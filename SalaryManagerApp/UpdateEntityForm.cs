@@ -26,7 +26,14 @@ namespace SalaryManagerApp
 
         private void GetEntityBtn_Click(object sender, EventArgs e)
         {
-            CreatePropertiesTable(Service.ORM.GetValue(tableNameLable.Text, _entityType, Convert.ToInt32(idTextBox.Text)));
+            try
+            {
+                CreatePropertiesTable(Service.ORM.GetValue(tableNameLable.Text, _entityType, Convert.ToInt32(idTextBox.Text)));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CreatePropertiesTable(DataRow dataRow)
@@ -69,16 +76,23 @@ namespace SalaryManagerApp
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            List<string> props = new List<string>();
+            try
+            {
+                List<string> props = new List<string>();
 
-            props.Add(idTextBox.Text);
+                props.Add(idTextBox.Text);
 
-            foreach (TextBox textBox in _propsTextBox) props.Add(textBox.Text);
+                foreach (TextBox textBox in _propsTextBox) props.Add(textBox.Text);
 
-            Service.UpdateEntity(_entityType, props);
+                Service.UpdateEntity(_entityType, props);
 
-            MessageBox.Show("Entity was updated");
-            Close();
+                MessageBox.Show("Entity was updated");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

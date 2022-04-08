@@ -1,6 +1,7 @@
 ﻿using SalaryManager.ORM.Interfaces;
 using System;
 using System.Data;
+using System.Linq;
 
 namespace SalaryManager.ORM
 {
@@ -34,18 +35,16 @@ namespace SalaryManager.ORM
 
             DataSet dataSet = _sqlExecutor.GetDataSet($"SELECT * FROM {tableName}");
 
-            foreach (DataTable table in dataSet.Tables)
+            try
             {
-                foreach (DataRow row in table.Rows)
-                {
-                    if ((int)row[0] == id)
-                    {
-                        return row;
-                    }
-                }
+                return (from obj in dataSet.Tables[0].AsEnumerable()
+                           where (int)obj["Id"] == id
+                           select obj).First();
             }
-
-            throw new Exception("Entity is not found");
+            catch 
+            {
+                throw new Exception("Entity is not found");
+            }
         }
 
         public void InsertValue(string tableName, string sqlCom)
