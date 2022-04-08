@@ -71,11 +71,13 @@ namespace SalaryManagerApp
         {
             List<string> props = new List<string>();
 
+            props.Add(idTextBox.Text);
+
             foreach (TextBox textBox in _propsTextBox) props.Add(textBox.Text);
 
             Service.UpdateEntity(_entityType, props);
 
-            MessageBox.Show("Entity was created");
+            MessageBox.Show("Entity was updated");
             Close();
         }
     }

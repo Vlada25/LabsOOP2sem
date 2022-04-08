@@ -36,6 +36,7 @@ namespace SalaryManagerApp
             foreach (var prop in Service.TableManager.GetBaseProps(_entityType))
             {
                 Label label = new Label();
+                label.Width = 170;
                 label.Text = prop.Name;
                 label.Name = prop.Name + "Label";
                 label.Font = new Font(Font.FontFamily, 10);
