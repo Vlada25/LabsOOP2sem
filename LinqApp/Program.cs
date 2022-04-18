@@ -10,9 +10,10 @@ try
 
     Console.WriteLine("\nResult:");
 
+    List<string> data = FileReader.DataList;
+
     var result = from line in FileReader.DataList
-                 from digit in line.Split(' ').OfType<double>()
-                 select digit;
+                select line.Split(' ').Average(d => int.Parse(d));
 
     foreach (double r in result)
         Console.WriteLine(r);
