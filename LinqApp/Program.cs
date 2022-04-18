@@ -10,13 +10,7 @@ try
 
     Console.WriteLine("\nResult:");
 
-    List<string> data = FileReader.DataList;
-
-    var result = from line in FileReader.DataList
-                select line.Split(' ').Average(d => int.Parse(d));
-
-    foreach (double r in result)
-        Console.WriteLine(r);
+    Console.WriteLine((from line in FileReader.DataList select line.Split(' ').Average(d => int.Parse(d))).Sum());
 }
 catch (Exception ex)
 {
